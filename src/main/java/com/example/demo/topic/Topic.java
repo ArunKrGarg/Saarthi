@@ -1,14 +1,18 @@
-package com.example.demo;
+package com.example.demo.topic;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
+
+@Entity
 public class Topic {
 
+    @Id
     private String id;
     private String name;
     private String description;
 
-    public Topic(){
-
-    }
+    public Topic(){}
 
     public Topic(String id, String name, String description) {
         this.id = id;

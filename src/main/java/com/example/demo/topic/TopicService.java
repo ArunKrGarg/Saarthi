@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example.demo.topic;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,6 +10,9 @@ import java.util.List;
 @Service
 public class TopicService {
 
+    @Autowired
+    private TopicRepository topicRepository;
+
     private List<Topic> topics = new ArrayList<>(Arrays.asList(
             new Topic("Spring", "Spring Framework", "Spring Framework Description"),
             new Topic("Spring", "Spring Framework", "Spring Framework Description"),
@@ -16,6 +20,8 @@ public class TopicService {
     ));
 
     public List<Topic> getAllTopics() {
+        List<Topic> topics = new ArrayList<>();
+        topicRepository.findAll().forEach(topics::add);
         return topics;
     }
 
@@ -24,7 +30,7 @@ public class TopicService {
     }
 
     public void addTopic(Topic topic) {
-        topics.add(topic);
+        topicRepository.save(topic);
     }
 
     public void updateTopic(String id, Topic topic) {
@@ -38,6 +44,6 @@ public class TopicService {
     }
 
     public void deleteTopic(String id) {
-       topics.removeIf(t->t.getId().equals(id));
+        topics.removeIf(t -> t.getId().equals(id));
     }
 }
