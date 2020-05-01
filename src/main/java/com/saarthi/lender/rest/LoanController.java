@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.saarthi.lendee.Farmer;
 import com.saarthi.lendee.service.FarmerService;
+import com.saarthi.lender.Bank;
 import com.saarthi.lender.Loan;
 import com.saarthi.lender.service.LoanService;
+import com.saarthi.lender.utils.LoanRequestDTO;
 import com.saarthi.lender.utils.PreLoanResponse;
 
 @RestController
@@ -25,6 +27,16 @@ public class LoanController {
     public PreLoanResponse preApplyLoan() {
     	return loanService.preApplyLoan();
     }
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/applyLoan")
+    public void applyLoan(@RequestBody LoanRequestDTO loanRequest) {
+    	loanService.addLoan(loanRequest);
+    }
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/bank")
+    public void addBank(@RequestBody Bank bank) {
+    	loanService.addBank(bank);
+    }
 
     @RequestMapping("loans")
     public List<Loan> getAllLoans() {
@@ -36,12 +48,7 @@ public class LoanController {
         return loanService.getLoan(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/applyLoan")
-    public void applyLoan(@RequestBody Loan loan) {
-    	loanService.addLoan(loan);
-    }
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/farmer/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/loan/{id}")
     public void updateLoan(@RequestBody Loan loan,@PathVariable String id) {
     	loanService.updateLoan(id, loan);
     }
