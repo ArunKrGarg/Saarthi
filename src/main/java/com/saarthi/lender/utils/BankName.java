@@ -1,5 +1,5 @@
 package com.saarthi.lender.utils;
 
 public enum BankName {
-	AXIS, HDFC, HSBC, ICICI, RBI
+	AXIS, HDFC, HSBC, ICICI, SBI
 }
