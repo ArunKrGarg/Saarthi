@@ -29,8 +29,8 @@ public class LoanController {
     }
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/applyLoan")
-    public void applyLoan(@RequestBody LoanRequestDTO loanRequest) {
-    	loanService.addLoan(loanRequest);
+    public String applyLoan(@RequestBody LoanRequestDTO loanRequest) {
+    	return loanService.addLoan(loanRequest);
     }
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/bank")
@@ -41,6 +41,11 @@ public class LoanController {
     @RequestMapping("loans")
     public List<Loan> getAllLoans() {
         return loanService.getAllLoans();
+    }
+    
+    @RequestMapping("banks")
+    public List<Bank> getAllBanks() {
+        return loanService.getAllBanks();
     }
 
     @RequestMapping("/loan/{id}")

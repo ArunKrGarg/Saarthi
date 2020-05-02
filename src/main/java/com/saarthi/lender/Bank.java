@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.CascadeType;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -29,7 +31,7 @@ public class Bank {
 	@Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
-	private String bank_id;
+	private String bankId;
 	private String ifscCode;
 	private BankName name;
 	private double interestRate;
@@ -41,6 +43,6 @@ public class Bank {
 	@JsonProperty(access = Access.WRITE_ONLY)
 	@Embedded
 	private License license;
-	@OneToMany
+	@OneToMany(mappedBy="bank", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	private List<Loan>loans;
 }

@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 @Embeddable
 public class License {
-	private String license_id;
+	private String licenseId;
 	private String renewalDate;
 }

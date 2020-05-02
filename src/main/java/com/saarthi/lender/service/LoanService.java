@@ -1,6 +1,7 @@
 package com.saarthi.lender.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Arrays;
 import java.util.List;
 
@@ -49,9 +50,15 @@ public class LoanService {
         return loanDao.findOne(id);
     }
 
-    public void addLoan(LoanRequestDTO loanRequest) {
-    	Loan loan = generateLoanRequest(loanRequest);
-    	loanDao.save(loan);
+    public String addLoan(LoanRequestDTO loanRequest) {
+    	try {
+    		Loan loan = generateLoanRequest(loanRequest);
+    		loanDao.save(loan);
+    		return "Loan applied successfully. <br> Waiting for digital contract approval. You will be notified soon";
+    	}catch(Exception e) {
+    		System.out.println("Error while adding loan: "+e);
+    		return "Error while applying loan";
+    	}
     }
 
     private Loan generateLoanRequest(LoanRequestDTO loanRequest) {
@@ -62,8 +69,13 @@ public class LoanService {
 		loan.setReasonForLoan(loanRequest.getReasonForLoan());
 		loan.setInstallments(loanRequest.getInstallments());
 		loan.setAdditionalDetails(loanRequest.getAdditionalDetails());
+		// main reason of taking a request dto instean of loan
 		processLoanDocs(loanRequest.getDoc());
-		loan.setStatus(LoanStatus.IN_PROGRESS);
+		loan.setStatus(LoanStatus.CREATED);
+		Bank bank = getBank(loanRequest.getBankId());
+		loan.setBank(bank);
+		loan.setFarmerId(loanRequest.getFarmerId());
+		loan.setCreatedDate(new Date());
 		return loan;
 	}
 
@@ -82,6 +94,10 @@ public class LoanService {
         return banks;
     }
 	
+	public Bank getBank(String id) {
+        return bankDao.findOne(id);
+    }
+	
 	public void updateLoan(String id, Loan farmer) {
     	loanDao.save(farmer);
     }
@@ -89,4 +105,5 @@ public class LoanService {
     public void deleteLoan(String id) {
     	loanDao.delete(id);
     }
+    
 }

@@ -41,6 +41,6 @@ public class Loan {
 	private Date createdDate;
 	private LoanStatus status;
 	@ManyToOne
-	@JoinColumn(name="bank_id", referencedColumnName = "bank_id", insertable = false, updatable = false)
+	@JoinColumn(name="bankId", referencedColumnName = "bankId")
 	private Bank bank;
 }

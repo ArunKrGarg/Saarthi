@@ -1,5 +1,5 @@
 package com.saarthi.lender.utils;
 
 public enum LoanStatus {
-	IN_PROGRESS, APPROVED, REJECTED
+	CREATED, SENT_TO_CHECKER, CHECKED, SENT_TO_LENDER, APPROVED, REJECTED
 }
