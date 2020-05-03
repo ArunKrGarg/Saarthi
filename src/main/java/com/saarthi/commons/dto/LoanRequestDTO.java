@@ -17,4 +17,5 @@ public class LoanRequestDTO {
 	private List<Document> docs;
 	private String bankId;
 	private String farmerId;
+	private String cropId;
 }

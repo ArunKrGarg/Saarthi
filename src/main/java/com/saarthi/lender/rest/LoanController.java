@@ -40,7 +40,7 @@ public class LoanController {
 		try {
 			return new ResponseEntity<GenericResponse>(new GenericResponse(loanService.addLoan(loanRequest)), HttpStatus.OK);
 		} catch(Exception e) {
-			return new ResponseEntity<GenericResponse>(new GenericResponse(e, false), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<GenericResponse>(new GenericResponse(e.getMessage(), false), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	

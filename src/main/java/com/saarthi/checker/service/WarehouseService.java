@@ -44,4 +44,8 @@ public class WarehouseService {
 	public Warehouse getWarehouse(String id) {
         return warehouseDAO.findOne(id);
     }
+	
+	public WarehouseOwner getWarehouseOwnerByWarehouseId(String id) {
+    	return warehouseDAO.findWarehouseOwnerByWarehouseId(id);
+    }
 }

@@ -8,13 +8,16 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import com.saarthi.commons.Signature;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.saarthi.checker.Warehouse;
+import com.saarthi.checker.WarehouseOwner;
 import com.saarthi.checker.service.WarehouseService;
+import com.saarthi.commons.ContractStatus;
 import com.saarthi.commons.DigitalContract;
 import com.saarthi.commons.Document;
 import com.saarthi.commons.FarmerInfo;
@@ -204,7 +207,7 @@ public class LoanService {
     		loanDao.save(loan);
     		return "Loan applied successfully. <br> Waiting for digital contract approval. You will be notified soon";
     	}catch(Exception e) {
-    		System.out.println("Error while adding loan: "+e);
+    		System.out.println("Error while adding loan: "+e.getStackTrace());
     		throw new Exception(e);
     	}
     }
@@ -218,7 +221,7 @@ public class LoanService {
 		loan.setInstallments(loanRequest.getInstallments());
 		loan.setAdditionalDetails(loanRequest.getAdditionalDetails());
 		// TBD main reason of taking a request dto instead of loan
-		loan.setDocs(fetchDCfromDocs(loanRequest.getDocs()));
+		loan.setDocs(fetchDCfromDocs(loanRequest.getDocs(), loanRequest));
 		processLoanDocs(loanRequest.getDocs());
 		loan.setStatus(LoanStatus.NEW);
 		Bank bank = getBank(loanRequest.getBankId());
@@ -228,14 +231,28 @@ public class LoanService {
 		return loan;
 	}
 
-    //TBD
-	private List<DigitalContract> fetchDCfromDocs(List<Document> docs) {
+    //TBD Now
+	private List<DigitalContract> fetchDCfromDocs(List<Document> docs, LoanRequestDTO loanRequest) {
 		List<DigitalContract> digitalContracts = new ArrayList<DigitalContract>();
+		if(docs==null)return null;
 		for(Document doc : docs) {
 			DigitalContract dc = new DigitalContract();
+			dc.setDoc(doc);
+			dc.setFarmerId(loanRequest.getFarmerId());
+			dc.setCropId(loanRequest.getCropId());
 			
+			WarehouseOwner owner = warehouseService.getWarehouseOwnerByWarehouseId(loanRequest.getWarehouseId());
+			dc.setStorageOwnerId(owner.getId());
+			
+			Signature farmerSign = new Signature();
+			Farmer farmer = farmerService.getFarmer(loanRequest.getFarmerId());
+			farmerSign.setName(farmer.getName());
+			farmerSign.setPlace(farmer.getLocation().getCity());
+			farmerSign.setDate(new Date());
+			dc.setFarmerSign(farmerSign);
+			dc.setStatus(ContractStatus.APPROVED_BY_FARMER);
 		}
-		return null;
+		return digitalContracts;
 	}
 
 	private void processLoanDocs(List<Document> doc) {

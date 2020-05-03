@@ -22,6 +22,7 @@ public class Warehouse {
 	private String name;
 	@Embedded
 	private Location location;
+	// TBD to be changed to ManyToMany
 	@ManyToOne
 	private WarehouseOwner owner;
 }
