@@ -144,11 +144,11 @@ public class LoanService {
 		return CompletableFuture.supplyAsync(() -> {
 			WarehouseInfo warehouseInfo = new WarehouseInfo();
 			Warehouse warehouse = warehouseService.getWarehouse(loan.getWarehouseId());
-			System.out.println("Warehouse id: " + loan.getWarehouseId());
-			System.out.println(new Gson().toJson(warehouse));
+			//System.out.println("Warehouse id: " + loan.getWarehouseId());
+			//System.out.println(new Gson().toJson(warehouse));
 			Crop crop = farmerService.getCropByWarehouse(loan.getFarmerId(), loan.getWarehouseId());
 			warehouseInfo.setCropQuality(crop == null ? null : crop.getQuality().name());
-			System.out.println("crop: " + crop);
+			//System.out.println("crop: " + crop);
 			warehouseInfo.setPackets(
 					crop == null || crop.getMeasure() == null ? 0 : crop.getQuantity() * crop.getMeasure().getValue());
 
@@ -315,6 +315,34 @@ public class LoanService {
     	//}
     	});
 		return loansSummary;
+	}
+	
+	public EntityLoansResponseDTO getLoanDetails(String id) {
+		Loan loan = getLoan(id);
+		EntityLoansResponseDTO loanDetails = new EntityLoansResponseDTO();
+		/*
+		// avg of 5 response time: 8:10 sec
+		loanDetails.setLoan(fetchLoanInfoS(loan));
+		loanDetails.setFarmer(fetchFarmerInfoS(loan));
+		loanDetails.setWarehouse(fetchWarehouseInfoS(loan));
+		*/
+		
+		CompletableFuture<LoanInfo> loanInfo = fetchLoanInfo(loan);
+		CompletableFuture<FarmerInfo> farmerInfo = fetchFarmerInfo(loan);
+		CompletableFuture<WarehouseInfo> warehouseInfo = fetchWarehouseInfo(loan);
+		CompletableFuture<Void> all = CompletableFuture.allOf(loanInfo, farmerInfo, warehouseInfo);
+		try {
+			// avg of 5 response time: 9 sec
+			all.get();
+			// avg of 5 response time: 6:10 sec
+			loanDetails.setLoan(loanInfo.get());
+			loanDetails.setFarmer(farmerInfo.get());
+			loanDetails.setWarehouse(warehouseInfo.get());
+		} catch (InterruptedException | ExecutionException e) {
+			System.out.println("Error: Interruptions in executing completable future");
+		}
+		
+		return loanDetails;
 	}
 
 }
