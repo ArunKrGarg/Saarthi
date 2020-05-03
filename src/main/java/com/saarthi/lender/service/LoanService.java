@@ -333,7 +333,7 @@ public class LoanService {
 		CompletableFuture<Void> all = CompletableFuture.allOf(loanInfo, farmerInfo, warehouseInfo);
 		try {
 			// avg of 5 response time: 9 sec
-			all.get();
+			//all.get();
 			// avg of 5 response time: 6:10 sec
 			loanDetails.setLoan(loanInfo.get());
 			loanDetails.setFarmer(farmerInfo.get());
