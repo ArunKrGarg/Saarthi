@@ -37,8 +37,12 @@ public class LoanController {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/applyLoan")
     public ResponseEntity<?> applyLoan(@RequestBody LoanRequestDTO loanRequest) {
-    	return new ResponseEntity<GenericResponse>(new GenericResponse(loanService.addLoan(loanRequest)), HttpStatus.OK);
-    }
+		try {
+			return new ResponseEntity<GenericResponse>(new GenericResponse(loanService.addLoan(loanRequest)), HttpStatus.OK);
+		} catch(Exception e) {
+			return new ResponseEntity<GenericResponse>(new GenericResponse(e, false), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/bank")
     public void addBank(@RequestBody Bank bank) {

@@ -198,14 +198,14 @@ public class LoanService {
         return loanDao.findOne(id);
     }
 
-    public String addLoan(LoanRequestDTO loanRequest) {
+    public String addLoan(LoanRequestDTO loanRequest) throws Exception{
     	try {
     		Loan loan = generateLoanRequest(loanRequest);
     		loanDao.save(loan);
     		return "Loan applied successfully. <br> Waiting for digital contract approval. You will be notified soon";
     	}catch(Exception e) {
     		System.out.println("Error while adding loan: "+e);
-    		return "Error while applying loan";
+    		throw new Exception(e);
     	}
     }
 

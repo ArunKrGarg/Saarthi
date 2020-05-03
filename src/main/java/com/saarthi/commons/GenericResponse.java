@@ -8,6 +8,10 @@ public class GenericResponse {
 		this.message = message;
 		status = true;
 	}
+	public GenericResponse(Object message, boolean status) {
+		this.message = message;
+		this.status = status;
+	}
 	public boolean isStatus() {
 		return status;
 	}
