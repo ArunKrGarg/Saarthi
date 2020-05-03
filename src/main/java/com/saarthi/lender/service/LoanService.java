@@ -196,7 +196,12 @@ public class LoanService {
 	public List<Loan> getAllLoansByBank(String bankId) {
     	return loanDao.findByBankBankIdOrderByCreatedDateDesc(bankId);
     }
-    
+	
+	public List<Loan> getAllLoansByFarmer(String farmerId, int limit, int pageNo) {
+		int offset = (pageNo-1)*limit;
+    	return loanDao.findByFarmerIdOrderByCreatedDateDesc(farmerId, limit, offset);
+    }
+	
     public Loan getLoan(String id) {
         return loanDao.findOne(id);
     }

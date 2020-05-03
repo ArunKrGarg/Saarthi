@@ -16,4 +16,6 @@ public interface LoanDAO extends CrudRepository<Loan, String>{
 	@Query(value = "select * from loan where bank_id = ?1 order by created_date desc limit ?2 offset ?3", nativeQuery = true)
 	List<Loan>findByBankId(String bankId, int limit, int offset);
 	
+	@Query(value = "select * from loan where farmer_id = ?1 order by created_date desc limit ?2 offset ?3", nativeQuery = true)
+	List<Loan>findByFarmerIdOrderByCreatedDateDesc(String bankId, int limit, int offset);
 }

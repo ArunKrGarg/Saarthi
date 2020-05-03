@@ -90,6 +90,11 @@ public class LoanController {
     	return new ResponseEntity<GenericResponse>(new GenericResponse(loanService.getLoanSummaryWarehouse(id, pageSize, pageNo)),HttpStatus.OK);
     }
     
+    @RequestMapping("loans/farmer/{id}")
+    public ResponseEntity<?> getAllLoansByFarmer(@PathVariable String id, @RequestParam(required = false, defaultValue = "5") int pageSize, @RequestParam(required = false, defaultValue = "1") int pageNo){
+    	return new ResponseEntity<GenericResponse>(new GenericResponse(loanService.getAllLoansByFarmer(id, pageSize, pageNo)),HttpStatus.OK);
+    }
+    
     @RequestMapping("loan/{id}/details")
     public ResponseEntity<?> getLoanDetails(@PathVariable String id){
     	return new ResponseEntity<GenericResponse>(new GenericResponse(loanService.getLoanDetails(id)) ,HttpStatus.OK);
