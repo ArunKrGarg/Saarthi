@@ -34,4 +34,9 @@ public class WarehouseController {
     public void addWarehouseOwner(@RequestBody WarehouseOwner warehouseOwner) {
     	warehouseService.addWarehouseOwner(warehouseOwner);
     }
+    
+    @RequestMapping("/warehouseOwners")
+    public List<WarehouseOwner> getAllWarehouseOwners() {
+        return warehouseService.getAllWarehouseOwners();
+    }
 }

@@ -16,7 +16,9 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.saarthi.commons.DigitalContract;
+import com.saarthi.commons.Document;
 import com.saarthi.lender.utils.LoanStatus;
+import com.saarthi.lender.utils.LoanType;
 import com.saarthi.utils.ListToJsonConverter;
 
 import lombok.Data;
@@ -39,7 +41,9 @@ public class Loan {
 	private int principal;
 	private int tenure;
 	private Date createdDate;
+	private Date updatedDate;
 	private LoanStatus status;
+	private LoanType type;
 	@ManyToOne
 	@JoinColumn(name="bankId", referencedColumnName = "bankId")
 	private Bank bank;

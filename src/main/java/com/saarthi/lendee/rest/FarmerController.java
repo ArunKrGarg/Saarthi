@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.saarthi.lendee.Crop;
 import com.saarthi.lendee.Farmer;
 import com.saarthi.lendee.service.FarmerService;
 
@@ -42,4 +43,10 @@ public class FarmerController {
     public void deleteFarmer(@PathVariable String id) {
     	farmerService.deleteFarmer(id);
     }
+    
+    @RequestMapping("/farmer/{id}/crops")
+    public List<Crop> getAllCropsByFarmer(@PathVariable String id) {
+        return farmerService.getCropByFarmerId(id);
+    }
+
 }

@@ -26,6 +26,8 @@ public class Farmer {
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	private String id;
+	@Column(unique = true)
+	private String mobileNo;
 	private String name;
 	private String upiId;
 	private String creditScore;

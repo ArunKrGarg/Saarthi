@@ -37,12 +37,14 @@ public class Bank {
 	private double interestRate;
 	@Embedded
 	private Location location;
+	@JsonProperty(access = Access.WRITE_ONLY)
 	@Column(columnDefinition = "json")
 	@Convert(converter = ListToJsonConverter.class)
 	private List<Employee> manager;
 	@JsonProperty(access = Access.WRITE_ONLY)
 	@Embedded
 	private License license;
-	@OneToMany(mappedBy="bank", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JsonIgnore
+	@OneToMany(mappedBy="bank", cascade=CascadeType.ALL)
 	private List<Loan>loans;
 }

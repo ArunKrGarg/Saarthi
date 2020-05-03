@@ -34,4 +34,14 @@ public class WarehouseService {
 	public void addWarehouseOwner(WarehouseOwner warehouseOwner) {
     	warehouseOwnerDAO.save(warehouseOwner);
     }
+	
+	public List<WarehouseOwner> getAllWarehouseOwners() {
+        List<WarehouseOwner> warehouseOwners = new ArrayList<>();
+        warehouseOwnerDAO.findAll().forEach(warehouseOwners::add);
+        return warehouseOwners;
+    }
+	
+	public Warehouse getWarehouse(String id) {
+        return warehouseDAO.findOne(id);
+    }
 }
