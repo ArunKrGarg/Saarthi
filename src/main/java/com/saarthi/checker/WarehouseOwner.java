@@ -28,5 +28,8 @@ public class WarehouseOwner {
 	@Column(columnDefinition = "json")
 	@Convert(converter = ListToJsonConverter.class)
 	private List<Document> docs;
-	
+	@Column(unique = true)
+	private String mobileNo;
+	@Column(unique = true)
+	private String emailId;
 }

@@ -1,7 +1,6 @@
 package com.saarthi.lendee.service;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +28,14 @@ public class FarmerService {
 		return farmers;
 	}
 
-	public Farmer getFarmer(String id) {
-		return farmerDao.findOne(id);
+	public Farmer getFarmerByEmailId(String id) {
+		return farmerDao.findOneByEmailId(id);
 	}
 
+	public Farmer getFarmerByMobileNo(String number) {
+		return farmerDao.findOneByMobileNo(number);
+	}
+	
 	public Crop getCropByWarehouse(String farmerId, String warehouseId) {
 		System.out.println("pehle");
 		List<Crop> crops = farmerDao.findCropByFarmerId(farmerId).getCrops();
@@ -67,6 +70,10 @@ public class FarmerService {
 		});
 		//}
 		return warehouses;
+	}
+	
+	public Farmer getFarmer(String id) {
+		return farmerDao.findOne(id);
 	}
 
 	public void addFarmer(Farmer farmer) {

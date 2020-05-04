@@ -1,9 +1,10 @@
 package com.saarthi.lender.rest;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,24 +12,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.saarthi.lendee.Farmer;
-import com.saarthi.lendee.service.FarmerService;
-import com.saarthi.lender.Bank;
-import com.saarthi.lender.Loan;
-import com.saarthi.lender.service.LoanService;
-import com.saarthi.lender.utils.PreLoanResponse;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpStatus;
 import com.saarthi.commons.GenericResponse;
 import com.saarthi.commons.dto.EntityLoansResponseDTO;
 import com.saarthi.commons.dto.LoanRequestDTO;
-import com.saarthi.commons.dto.LoanSummaryDTO;
+import com.saarthi.lender.Bank;
+import com.saarthi.lender.Loan;
+import com.saarthi.lender.service.BankService;
+import com.saarthi.lender.service.LoanService;
+import com.saarthi.lender.utils.PreLoanResponse;
 
 @RestController
 @RequestMapping("/lender")
 public class LoanController {
 	@Autowired
     private LoanService loanService;
+	
+	@Autowired
+    private BankService bankService;
 	
 	@RequestMapping("/preApplyLoan/{id}")
     public PreLoanResponse preApplyLoan(@PathVariable String id) {
@@ -46,7 +46,7 @@ public class LoanController {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/bank")
     public void addBank(@RequestBody Bank bank) {
-    	loanService.addBank(bank);
+		bankService.addBank(bank);
     }
 
     @RequestMapping("loans")
@@ -56,7 +56,7 @@ public class LoanController {
     
     @RequestMapping("banks")
     public List<Bank> getAllBanks() {
-        return loanService.getAllBanks();
+        return bankService.getAllBanks();
     }
 
     @RequestMapping("/loan/{id}")

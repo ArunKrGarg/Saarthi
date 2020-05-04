@@ -31,6 +31,8 @@ public class Farmer {
 	private String name;
 	private String upiId;
 	private String creditScore;
+	@Column(unique = true)
+	private String emailId;
 	@Embedded
 	private Location location;
 	@Column(columnDefinition = "json")

@@ -1,15 +1,13 @@
 package com.saarthi.lender.service;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import com.saarthi.commons.Signature;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +21,7 @@ import com.saarthi.commons.DigitalContract;
 import com.saarthi.commons.Document;
 import com.saarthi.commons.FarmerInfo;
 import com.saarthi.commons.LoanInfo;
+import com.saarthi.commons.Signature;
 import com.saarthi.commons.WarehouseInfo;
 import com.saarthi.commons.dto.EntityLoansResponseDTO;
 import com.saarthi.commons.dto.LoanRequestDTO;
@@ -32,7 +31,6 @@ import com.saarthi.lendee.Farmer;
 import com.saarthi.lendee.service.FarmerService;
 import com.saarthi.lender.Bank;
 import com.saarthi.lender.Loan;
-import com.saarthi.lender.dao.BankDAO;
 import com.saarthi.lender.dao.LoanDAO;
 import com.saarthi.lender.utils.LenderConstants;
 import com.saarthi.lender.utils.LoanStatus;
@@ -44,13 +42,13 @@ public class LoanService {
     private LoanDAO loanDao;
 	
 	@Autowired
-	private BankDAO bankDao;
-	
-	@Autowired
 	private WarehouseService warehouseService;
 	
 	@Autowired
 	private FarmerService farmerService;
+	
+	@Autowired
+    private BankService bankService;
 	
 	private ExecutorService pool = Executors.newFixedThreadPool(20);
 	
@@ -60,7 +58,7 @@ public class LoanService {
 		response.setWarehouses(farmerService.getFarmerWarehouses(id));
 		response.setReasonsForLoan(Arrays.asList(LenderConstants.LOAN_REASONS));
 		response.setInstallments(Arrays.asList(LenderConstants.INSTALLMENTS));
-		response.setBanks(getAllBanks());
+		response.setBanks(bankService.getAllBanks());
 		return response;
 	}
 
@@ -230,7 +228,7 @@ public class LoanService {
 		loan.setDocs(fetchDCfromDocs(loanRequest.getDocs(), loanRequest));
 		processLoanDocs(loanRequest.getDocs());
 		loan.setStatus(LoanStatus.NEW);
-		Bank bank = getBank(loanRequest.getBankId());
+		Bank bank = bankService.getBank(loanRequest.getBankId());
 		loan.setBank(bank);
 		loan.setFarmerId(loanRequest.getFarmerId());
 		loan.setCreatedDate(new Date());
@@ -266,20 +264,6 @@ public class LoanService {
 		
 	}
 
-	public void addBank(Bank bank) {
-    	bankDao.save(bank);
-    }
-	
-	public List<Bank> getAllBanks() {
-        List<Bank> banks = new ArrayList<>();
-        bankDao.findAll().forEach(banks::add);
-        return banks;
-    }
-	
-	public Bank getBank(String id) {
-        return bankDao.findOne(id);
-    }
-	
 	public void updateLoan(String id, Loan farmer) {
     	loanDao.save(farmer);
     }

@@ -35,6 +35,8 @@ public class Bank {
 	private String ifscCode;
 	private BankName name;
 	private double interestRate;
+	@Column(unique = true)
+	private String emailId;
 	@Embedded
 	private Location location;
 	@JsonProperty(access = Access.WRITE_ONLY)
