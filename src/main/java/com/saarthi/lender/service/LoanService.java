@@ -2,6 +2,7 @@ package com.saarthi.lender.service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -53,10 +54,10 @@ public class LoanService {
 	
 	private ExecutorService pool = Executors.newFixedThreadPool(20);
 	
-	public PreLoanResponse preApplyLoan() {
+	public PreLoanResponse preApplyLoan(String id) {
 		PreLoanResponse response = new PreLoanResponse();
 		response.setTimeframes(Arrays.asList(LenderConstants.TIME_FRAMES));
-		response.setWarehouses(warehouseService.getAllWarehouses());
+		response.setWarehouses(farmerService.getFarmerWarehouses(id));
 		response.setReasonsForLoan(Arrays.asList(LenderConstants.LOAN_REASONS));
 		response.setInstallments(Arrays.asList(LenderConstants.INSTALLMENTS));
 		response.setBanks(getAllBanks());

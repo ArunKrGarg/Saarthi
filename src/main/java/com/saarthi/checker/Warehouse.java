@@ -8,6 +8,8 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.saarthi.commons.Location;
 
 import lombok.Data;
@@ -23,6 +25,7 @@ public class Warehouse {
 	@Embedded
 	private Location location;
 	// TBD to be changed to ManyToMany
+	@JsonProperty(access = Access.WRITE_ONLY)
 	@ManyToOne
 	private WarehouseOwner owner;
 }

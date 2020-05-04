@@ -30,9 +30,9 @@ public class LoanController {
 	@Autowired
     private LoanService loanService;
 	
-	@RequestMapping("/preApplyLoan")
-    public PreLoanResponse preApplyLoan() {
-    	return loanService.preApplyLoan();
+	@RequestMapping("/preApplyLoan/{id}")
+    public PreLoanResponse preApplyLoan(@PathVariable String id) {
+    	return loanService.preApplyLoan(id);
     }
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/applyLoan")
