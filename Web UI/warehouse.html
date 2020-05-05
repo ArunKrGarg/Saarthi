@@ -1,0 +1,944 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Saarthi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="Css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        .modal-content {
+            width: fit-content;
+        }
+
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+        }
+
+        .well {
+            background-color: white;
+        }
+
+        .jumbotron {
+            background-color: #f4511e;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+
+            .carousel-indicators li.active {
+                background-color: #f4511e;
+            }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+
+            .panel:hover {
+                box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+            }
+
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .panel-footer {
+            background-color: white !important;
+        }
+
+            .panel-footer h3 {
+                font-size: 32px;
+            }
+
+            .panel-footer h4 {
+                color: #aaa;
+                font-size: 14px;
+            }
+
+            .panel-footer .btn {
+                margin: 15px 0;
+                background-color: #f4511e;
+                color: #fff;
+            }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+            .navbar li a, .navbar .navbar-brand {
+                color: #fff !important;
+            }
+
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #f4511e !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+    </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage">Saarthi</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="#action">CREDITS</a></li>
+                    <li><a href="#view">APPROVE</a></li>
+                    <li><a href="#repayment">REPAYMENT</a></li>
+                    <li><a href="#settings">SETTINGS</a></li>
+                    <li><a href="home.html">LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>WAREHOUSE PORTAL</h1>
+        <p>APPROVE DIGITAL CONTRACTS</p>
+        <form>
+            <div class="input-group">
+                <input type="email" class="form-control" size="50" placeholder="Email Address : Subscribe for useful agricultural feeds" required>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-danger">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- List View -->
+    <div id="action" class="container-fluid">
+        <div class="text-center">
+        </div>
+        <div class="row slideanim">
+           
+            <div class="col-sm-12 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading" style="padding:5px;">
+                        <h1 class="text-center" style="font-size:20px;">Increase Credits </h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row " style="padding-bottom:20px;border-bottom: ridge;">
+                            <div class="col-sm-3 col-xs-12" style="border-right: ridge;">
+                                <button class="btn btn-lg" onClick="document.getElementById('approve').scrollIntoView();">Approve Contracts</button>
+                                <img src="Pictures/validation.png" class="img-rounded" alt="" style="height:50%;width:50%;">
+                            </div>
+                            <div class="col-sm-3 col-xs-12" style="border-right: ridge;">
+                                <button class="btn btn-lg" onClick="document.getElementById('notifybank').scrollIntoView();">Update Farmer Status</button>
+                                <img src="Pictures/warning.png" class="img-rounded" alt="" style="height:50%;width:50%;">
+                            </div>
+                            <div class="col-sm-3 col-xs-12" style="border-right: ridge;">
+                                <button class="btn btn-lg" onClick="document.getElementById('settings').scrollIntoView();">Edit Warehouse Profile</button>
+                                <img src="Pictures/user.png" class="img-rounded" alt="" style="height:50%;width:50%;">
+                            </div>
+                            <div class="col-sm-3 col-xs-12" style="border-right: ridge;">
+                                <button class="btn btn-lg" onClick="document.getElementById('updatereceipt').scrollIntoView();">Upload Crop Receipt</button>
+                                <img src="Pictures/bill.png" class="img-rounded" alt="" style="height:50%;width:50%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- List View -->
+    <div id="view" class="container-fluid">
+        <div class="text-center">
+            <h2>Loan Panel</h2>
+        </div>
+        <div class="row slideanim">
+            <div class="col-sm-3 col-xs-12">
+
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading" style="padding:5px;">
+                        <h1 class="text-center" style="font-size:20px;">APPROVE LOAN FOR NEXT CYCLE</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>Click on Record to Get Details</p>
+                        <input class="form-control" id="myInput" type="text" placeholder="Search Farmer">
+                        <br>
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    <th>Farmer Id</th>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Warehouse</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTable">
+                                <tr>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" checked></label>
+                                        </div>
+                                    </td>
+                                    <td>101</td>
+                                    <td>Sattpal</td>
+                                    <td>17/12/2019</td>
+                                    <td>Prabhat</td>
+                                    <td style="color:green;">Approved</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" checked></label>
+                                        </div>
+                                    </td>
+                                    <td>102</td>
+                                    <td>Rajbeer</td>
+                                    <td>15/8/2019</td>
+                                    <td>Prabhat</td>
+                                    <td style="color:mustard;"><strong>New</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" checked></label>
+                                        </div>
+                                    </td>
+                                    <td>103</td>
+                                    <td>Vimal</td>
+                                    <td>11/9/2019</td>
+                                    <td>GreenStar</td>
+                                    <td style="color:red;">Rejected</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" checked></label>
+                                        </div>
+                                    </td>
+                                    <td>104</td>
+                                    <td>Rambeer </td>
+                                    <td>1/11/2019</td>
+                                    <td>ColdIce</td>
+                                    <td style="color:mustard;"><strong>New</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" checked></label>
+                                        </div>
+                                    </td>
+                                    <td>105</td>
+                                    <td>Shyam </td>
+                                    <td>1/11/2019</td>
+                                    <td>ColdIce</td>
+                                    <td style="color:mustard;"><strong>New</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio" checked></label>
+                                        </div>
+                                    </td>
+                                    <td>105</td>
+                                    <td>Nathu </td>
+                                    <td>1/11/2019</td>
+                                    <td>ColdIce</td>
+                                    <td style="color:mustard;"><strong>New</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-lg" onClick="document.getElementById('approve').scrollIntoView();">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Container (Pricing Section) -->
+    <div id="approve" class="container-fluid bg-grey">
+        <div class="text-center">
+        </div>
+        <div class="row slideanim">
+            <div class="col-sm-3 col-xs-12">
+
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="panel panel-default ">
+                    <div class="panel-heading" style="padding:5px;">
+                        <h1 class="text-center" style="font-size:20px;">APPLICATION DETAILS</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6 form-group" style="margin-bottom: 0px;">
+                                    <br>
+
+                                    <p><span class="glyphicon glyphicon-bookmark"></span><b>  Application Status : New</b></p>
+                                    <p><span class="glyphicon glyphicon-map-marker"></span><b>  Warehouse : </b> Hapur, UP West</p>
+                                    <p><span class="glyphicon glyphicon-download-alt"></span> <b> Application Type: </b> Post-Harvest</p>
+                                    <p><span class="glyphicon glyphicon-calendar"></span> <b>  Date : </b> 12/2/2019</p>
+
+                                    <p><span class="glyphicon glyphicon-th-large"></span> <b> No. Of Packets : </b> 10,000</p>
+                                    <p><span class="glyphicon glyphicon-cog"></span> <b> Crop Quality : </b> Medium</p>
+                                    <p><span class="glyphicon glyphicon-map-marker"></span> <b> Location : </b> Hapur, UP West</p>
+                                    <p><span class="glyphicon glyphicon-phone"></span> <b> Phone No. : </b> 1515151515</p>
+                                    <p><span class="glyphicon glyphicon-envelope"></span> farmer@loan.com</p>
+                                    <p><span class="glyphicon glyphicon-star-empty"></span> Credit Score  <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> </p>
+                                    <textarea class="form-control" id="comments" name="comments" placeholder="Approve/Reject Reason" rows="3"></textarea><br>
+                                </div>
+                                <div class="col-sm-6 form-group" style="margin-bottom: 0px;">
+                                    <img src="Pictures/farmer2.png" class="img-rounded" alt="" style="height:100%;width:100%;">
+                                    <p style="font-size: medium; font-weight: 900;padding-left:5%;">------ Mr Satpal Gupta ------</p>
+                                    <div class="col-sm-12 form-group">
+                                        <p>DOCUMENTS:</p>
+                                        <div class="col-sm-6 ">
+                                            <img src="Pictures/contract.png" class="img-rounded" alt="" style="height:50%;width:100%;">
+                                            <p data-toggle="modal" data-target="#receiptModal" style="color: #337ab7; cursor: pointer;">View Crop Receipt</p>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="receiptModal" role="dialog" style="margin-top:50px;">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Crop Receipt</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Crop Type : Potato</p>
+                                                            <img src="Pictures/FarmerReceipt.jpeg" class="img-rounded" alt="" style="height:200px;width:400px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 ">
+                                            <img src="Pictures/adhar_name.png" class="img-rounded" alt="" style="height:50%;width:100%;">
+                                            <p data-toggle="modal" data-target="#aadharModal" style="color: #337ab7; cursor: pointer;">Aadhar Card</p>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="aadharModal" role="dialog" style="margin-top:50px;">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Aadhar Card</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Farmer Name : Sattpal</p>
+                                                            <img src="Pictures/FarmerAdhar.jpg" class="img-rounded" alt="" style="height:200px;width:400px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-center">
+                        <button class="btn btn-lg" style="background-color:forestgreen;" onClick="document.getElementById('notifycoldapprove').scrollIntoView();">Approve</button>
+                        <button class="btn btn-lg" style="background-color:red;" onClick="document.getElementById('notifycoldreject').scrollIntoView();">	&nbsp;Reject&nbsp;  </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This is a small modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------------->
+    <!-- Notify Bank -Approve-->
+    <div id="notifycoldapprove" class="container-fluid">
+        <div class="text-center">
+            <h2>Status</h2>
+            <h4>Loan Application-|101| </h4>
+        </div>
+        <div class="row slideanim">
+            <div class="col-sm-4 ">
+
+            </div>
+            <div class="col-sm-4 ">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Notification Sent</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="Pictures/like.png" class="img-rounded" alt="" style="height:100%;width:100%;">
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>Digital contract created and approved.</h3>
+                        <h4>Bank notified ! Thanx </h4>
+                        <button class="btn btn-lg" data-toggle="modal" data-target="#contractModal">View Contract</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="contractModal" role="dialog" style="margin-top:50px;width:70%;height:70%;">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h2 class="modal-title">Digital Contract</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><b>Parties Involved</b></p>
+                                        <p><b>Farmer :</b> Mr Sattpal</p>
+                                        <p><b>Warehouse :</b>Ajay Gupta</p>
+                                        <img src="Pictures/FarmerReceipt.jpeg" class="img-rounded" alt="" style="height:200px;width:400px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------------->
+    <!-- Notify Bank -Reject -->
+    <div id="notifycoldreject" class="container-fluid">
+        <div class="text-center">
+            <h2>Status</h2>
+            <h4>Loan Application-|101| </h4>
+        </div>
+        <div class="row slideanim">
+            <div class="col-sm-4 ">
+
+            </div>
+            <div class="col-sm-4 ">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Notification Sent</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="Pictures/dislike.png" class="img-rounded" alt="" style="height:100%;width:100%;">
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>Digital contract rejected .</h3>
+                        <h4>Farmer notified ! Thanx </h4>
+                        <button class="btn btn-lg" onClick="document.getElementById('approve').scrollIntoView();">View Application</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings View -->
+    <div id="settings" class="container-fluid bg-grey">
+        <nav class="navbar navbar-inverse visible-xs">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        HDFC BANK
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Dashboard</a></li>
+                        <li><a href="#">Age</a></li>
+                        <li><a href="#">Gender</a></li>
+                        <li><a href="#">Geo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row content">
+                <div class="col-sm-3 sidenav hidden-xs">
+                    <h4>Welcome,<br> Mr Ajay Gupta</h4>
+                    <img src="Pictures/warehouse-person.png" class="img-rounded" style=" border: 1px solid white;height:50%;width:50%;margin-bottom:20px;margin-left:60px;">
+                    <p>Aadhar Card No : <strong>XXXX XXXX 9587</strong></p>
+                    <p>Pan Card No : <strong>AYUPG754C</strong></p>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#section1">Dashboard</a></li>
+                        <li><a href="#section3">Password</a></li>
+                        <li><a href="#section2">Documents Uploaded</a></li>
+                        <li><a href="#section3">History</a></li>
+                        <li><a href="#section3">Credit Details</a></li>
+                    </ul><br>
+                </div>
+                <br>
+
+                <div class="col-sm-9">
+                    <div class="well" style="padding-bottom:0px;">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="well">
+                                    <h4>Edit Profile Details</h4>
+                                    <form action="">
+                                        <div class="form-group">
+                                            <span>Owner Name : </span>
+                                            <input type="email" class="form-control" placeholder=" Mr Ajay Gupta" id="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <span>Capacity: </span>
+                                            <input type="password" class="form-control" placeholder="1,000,000 packets" id="pwd">
+                                        </div>
+                                        <div class="form-group">
+                                            <span>Location : </span>
+                                            <input type="password" class="form-control" placeholder="Hapur,UP-West" id="pwd">
+                                        </div>
+                                        <span>Farmers Associated: </span>
+                                        <div class="dropdown">
+                                            <button style="width: 100%; background-color: #f4511e; border-color: #f4511e; " class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                                Sattpal , Harish
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Amit</a></li>
+                                                <li><a href="#">Girish</a></li>
+                                                <li><a href="#">Harilal</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="checkbox">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="well">
+                                    <h4>
+                                        Rating : 3.2
+                                        <span style="color: #e1ad01;float:right;" class="glyphicon glyphicon-star"></span>
+                                        <span style="color: #e1ad01;float:right;" class="glyphicon glyphicon-star"></span>
+                                        <span style="color: #e1ad01;float:right;" class="glyphicon glyphicon-star"></span>
+                                    </h4>
+                                    <span>Upload documents to improve score : </span>
+                                    <form action="">
+                                        <div class="row " style="padding-bottom:20px;border-bottom: ridge;">
+                                            <div class="col-sm-6 col-xs-12" style="border-right: ridge;">
+                                                <p style="color: #337ab7;    font-size: 12px;" href="#uploadreceipt">FARMER RECEIPTS</p>
+                                                <img src="Pictures/landrate.png" class="img-rounded" alt="" style="    margin-left: 40px;;height:50%;width:50%;">
+                                            </div>
+                                            <div class="col-sm-6 col-xs-12">
+                                                <p style="color: #337ab7;    font-size: 12px;">WAREHOUSE LICENSE</p>
+                                                <img src="Pictures/land.png" class="img-rounded" alt="" style="    margin-left: 40px;;height:50%;width:50%;">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-top:20px;">
+                                            <div class="col-sm-6 col-xs-12" style="border-right: ridge;">
+                                                <p style="color: #337ab7;    font-size: 12px;" href="#notifybank">ALERT BANKS</p>
+                                                <img src="Pictures/user.png" class="img-rounded" alt="" style="    margin-left: 40px;;padding-left:5px;height:50%;width:50%;">
+                                            </div>
+                                            <div class="col-sm-6 col-xs-12">
+                                                <p style="color: #337ab7;    font-size: 12px;">IDENTITY PROOF</p>
+                                                <img src="Pictures/id-card.png" class="img-rounded" alt="" style="    margin-left: 40px;height:50%;width:50%;">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="well">
+                                <h4>Profile Numbers</h4>
+                                <div class="w3-row-padding w3-margin-bottom">
+                                    <div class="w3-quarter">
+                                        <div class="w3-container w3-text-grey w3-padding-16" style="background-color:#f6f6f6; color:white;border: 0.1px solid  grey;">
+                                            <div class="w3-left"><i class="fa fa-bar-chart w3-xxxlarge"></i></div>
+                                            <div class="w3-right">
+                                                <h3>10,000</h3>
+                                            </div>
+                                            <div class="w3-clear"></div>
+                                            <h4>Crop Packet Capacity</h4>
+                                        </div>
+                                    </div>
+                                    <div class="w3-quarter">
+                                        <div class="w3-container w3-text-grey w3-padding-16" style="background-color:#f6f6f6; color:white;border: 0.1px solid grey;">
+                                            <div class="w3-left"><i class="fa fa-thumbs-up w3-xxxlarge"></i></div>
+                                            <div class="w3-right">
+                                                <h3>20</h3>
+                                            </div>
+                                            <div class="w3-clear"></div>
+                                            <h4>Contracts Approved</h4>
+                                        </div>
+                                    </div>
+                                    <div class="w3-quarter">
+                                        <div class="w3-container w3-text-grey w3-padding-16" style="background-color:#f6f6f6; color:white;border: 0.1px solid grey;">
+                                            <div class="w3-left"><i class="fa fa-file-text w3-xxxlarge"></i></div>
+                                            <div class="w3-right">
+                                                <h3>100</h3>
+                                            </div>
+                                            <div class="w3-clear"></div>
+                                            <h4>Receipts Uploaded</h4>
+                                        </div>
+                                    </div>
+                                    <div class="w3-quarter">
+                                        <div class="w3-container w3-text-grey w3-padding-16" style="background-color:#f6f6f6; color:white;border: 0.1px solid grey;">
+                                            <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+                                            <div class="w3-right">
+                                                <h3>50</h3>
+                                            </div>
+                                            <div class="w3-clear"></div>
+                                            <h4>Farmers Associated</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notify Bank Section :Improve Credit Score -->
+    <div id="notifybank" class="container-fluid">
+        <h2 class="text-center">NOTIFY BANK OF CROP CLEARANCE</h2>
+        <div class="row">
+            <div class="col-sm-4 ">
+            </div>
+            <div class="col-sm-4 ">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading" style="padding:5px;">
+                        <h1 style="font-size:20px;">Fill Details</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-1 ">
+                        </div>
+                        <div class="col-sm-10 ">
+                            <p>
+                                <div class="form-group">
+                                    <select class="form-control" id="sel1">
+                                        <option>Select Farmer</option>
+                                        <option>Sattpal</option>
+                                        <option>Krishnlal </option>
+                                        <option>HariOm</option>
+                                    </select>
+                                </div>
+                            </p>
+                            <p><input class="form-control" id="quantity" name="quantity" placeholder="Enter Crop Quantity" type="text" required></p>
+                            <p><input class="form-control" id="crop" name="crop" placeholder="Crop Name" type="text" required></p>
+                            <p>
+                                <input type="date" id="birthday" name="birthday" style="width:100%;">
+                            </p>
+                            <p><input class="form-control" id="name" name="name" placeholder="Additional Details" type="text" required></p>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-lg">Notify</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Receipt: Improving Credit Score -->
+    <div id="updatereceipt" class="container-fluid">
+        <h2 class="text-center">UPLOAD CROP RECEIPT</h2>
+        <div class="row">
+            <div class="col-sm-4 ">
+            </div>
+            <div class="col-sm-4 ">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading" style="padding:5px;">
+                        <h1 style="font-size:20px;">Fill Details</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-1 ">
+                        </div>
+                        <div class="col-sm-10 ">
+                            <p>
+                                <div class="form-group">
+                                    <select class="form-control" id="sel1">
+                                        <option>Select Farmer</option>
+                                        <option>Sattpal</option>
+                                        <option>Krishnlal </option>
+                                        <option>HariOm</option>
+                                    </select>
+                                </div>
+                            </p>
+                            <p><input class="form-control" id="quantity" name="quantity" placeholder="Enter Crop Quantity" type="text" required></p>
+                            <p><input class="form-control" id="crop" name="crop" placeholder="Crop Name" type="text" required></p>
+                            <p>
+                                <input type="date" id="birthday" name="birthday" style="width:100%;">
+                            </p>
+                            <p><input class="form-control" id="name" name="name" placeholder="Additional Details" type="text" required></p>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-sm-4">
+                            </div>
+                            <div class="col-sm-4">
+                                <span class="glyphicon glyphicon-file logo-small" type="file"></span>
+                                <input type="file" id="myfile" name="myfile" data-toggle="tooltip" data-placement="bottom" title="Upload Warehouse Recipt"><br><br>
+                            </div>
+                        </div>
+                        <button class="btn btn-lg" onClick="document.getElementById('choose').scrollIntoView();">Update Database</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
