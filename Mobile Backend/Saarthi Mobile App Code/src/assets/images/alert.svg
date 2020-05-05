@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="alert" transform="translate(-324 -268)">
+    <g id="Group_2399" data-name="Group 2399" transform="translate(-1164.888 4013.879)">
+      <path id="ic_notifications_24px" d="M15.808,31.282A2.961,2.961,0,0,0,18.76,28.33h-5.9A2.951,2.951,0,0,0,15.808,31.282Zm8.856-8.856v-7.38c0-4.531-2.421-8.325-6.642-9.328v-1a2.214,2.214,0,0,0-4.428,0v1c-4.236,1-6.642,4.782-6.642,9.328v7.38L4,25.378v1.476H27.616V25.378Z" transform="translate(1492.888 -3742.379)" fill="#656eda"/>
+    </g>
+    <rect id="Rectangle_2124" data-name="Rectangle 2124" width="40" height="40" transform="translate(324 268)" fill="none"/>
+  </g>
+</svg>

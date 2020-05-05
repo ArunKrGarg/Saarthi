@@ -1,0 +1,644 @@
+{
+  "users": {
+    "farmer@gmail.com": {
+      "password": "test123",
+      "name": "Ashok",
+      "city": "Agra",
+      "location": "J Colony, Agra, UP",
+      "type": "farmer",
+      "loan": ["Rs 30000 from ICICI Bank", "Rs 20000 from SBI Bank"],
+      "success1": "Repayment has been successfully Paid",
+      "success2": "Bank has been notified. Thank you",
+      "history": [
+        {
+          "id": "1",
+          "name": "Sattpal",
+          "image": "https://media.gettyimages.com/photos/indian-farmer-holding-freshly-picked-capsicums-picture-id538620640?s=2048x2048",
+          "date": "23/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer1@gmail.com",
+          "status": "new",
+          "reason": "",
+          "credit_score": "435",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Sattpal",
+          "image": "https://media.gettyimages.com/photos/indian-farmer-holding-freshly-picked-capsicums-picture-id538620640?s=2048x2048",
+          "date": "23/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "12000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer1@gmail.com",
+          "reason": "Invalid Documents",
+          "status": "rejected",
+          "credit_score": "435",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Sattpal",
+          "image": "https://media.gettyimages.com/photos/indian-farmer-holding-freshly-picked-capsicums-picture-id538620640?s=2048x2048",
+          "date": "23/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer1@gmail.com",
+          "status": "approved",
+          "reason": "Good History",
+          "credit_score": "435",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "3",
+          "name": "Sattpal",
+          "image": "https://media.gettyimages.com/photos/indian-farmer-holding-freshly-picked-capsicums-picture-id538620640?s=2048x2048",
+          "date": "23/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer1@gmail.com",
+          "status": "rejected",
+          "reason": "Invalid Documents",
+          "credit_score": "435",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        }
+      ]
+    },
+    "coldstorage@gmail.com": {
+      "password": "test123",
+      "name": "Rohit",
+      "city": "Agra",
+      "location": "J Colony, Agra, UP",
+      "type": "coldstorage",
+      "success1": "Digital Contract created and approved",
+      "success2": "Bank notified, thank you",
+      "history": [
+        {
+          "id": "2",
+          "name": "Rajdheer",
+          "image": "https://media.gettyimages.com/photos/portrait-of-buffalo-shepherd-picture-id652550482?s=2048x2048",
+          "date": "22/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer2@gmail.com",
+          "status": "rejected",
+          "reason": "Invalid Documents",
+          "credit_score": "420",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Sattpal",
+          "image": "https://media.gettyimages.com/photos/indian-farmer-holding-freshly-picked-capsicums-picture-id538620640?s=2048x2048",
+          "date": "23/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "12000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer1@gmail.com",
+          "reason": "Invalid Documents",
+          "status": "rejected",
+          "credit_score": "435",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "4",
+          "name": "Rajdheer",
+          "image": "https://media.gettyimages.com/photos/elderly-farmer-man-lost-in-thought-picture-id547133808?s=2048x2048",
+          "date": "22/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer2@gmail.com",
+          "status": "new",
+          "reason": "",
+          "credit_score": "420",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "7",
+          "name": "Rajesh",
+          "image": "https://media.gettyimages.com/photos/elderly-farmer-man-lost-in-thought-picture-id922593872?s=2048x2048",
+          "date": "23/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer1@gmail.com",
+          "status": "new",
+          "reason": "",
+          "credit_score": "435",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        }
+      ]
+    },
+    "banker@gmail.com": {
+      "password": "test123",
+      "name": "Suresh",
+      "city": "Agra",
+      "location": "J Colony, Agra, UP",
+      "type": "bank",
+      "success1": "Money Transferred Successfully",
+      "success2": "Farmer Notified, Thanks for the loan",
+      "history": [
+        {
+          "id": "2",
+          "name": "Rajdheer",
+          "image": "https://media.gettyimages.com/photos/portrait-of-buffalo-shepherd-picture-id652550482?s=2048x2048",
+          "date": "22/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer2@gmail.com",
+          "status": "rejected",
+          "reason": "Invalid Documents",
+          "credit_score": "420",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Sattpal",
+          "image": "https://media.gettyimages.com/photos/indian-farmer-holding-freshly-picked-capsicums-picture-id538620640?s=2048x2048",
+          "date": "23/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "12000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer1@gmail.com",
+          "reason": "Invalid Documents",
+          "status": "rejected",
+          "credit_score": "435",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "4",
+          "name": "Rajdheer",
+          "image": "https://media.gettyimages.com/photos/elderly-farmer-man-lost-in-thought-picture-id547133808?s=2048x2048",
+          "date": "22/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer2@gmail.com",
+          "status": "new",
+          "reason": "",
+          "credit_score": "420",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        },
+        {
+          "id": "7",
+          "name": "Rajesh",
+          "image": "https://media.gettyimages.com/photos/elderly-farmer-man-lost-in-thought-picture-id922593872?s=2048x2048",
+          "date": "23/04/2020",
+          "warehouse": "Prabhat",
+          "rate": "3%",
+          "location": "Hapur, UP West",
+          "loan_type": "101",
+          "application_type": "Post Harvent",
+          "packets": "10000",
+          "crop_quality": "Medium",
+          "phone": "787372762",
+          "email": "farmer1@gmail.com",
+          "status": "new",
+          "reason": "",
+          "credit_score": "435",
+          "documents": [
+            "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+            "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+          ]
+        }
+      ]
+    }
+  },
+  "timeframes": [1, 2, 5, 10, 20],
+  "warehouses": [
+    {
+      "id": "1cbd760c-0e1c-48ee-9996-e9ce592ba9e7",
+      "name": "GreenStar",
+      "location": {
+        "street": "Phulpur",
+        "city": "Bahadurpur, UP"
+      },
+      "owner": {
+        "id": "fff6501a-c57c-4e31-a08d-e7e35df986f6",
+        "name": "Ravi",
+        "credibilityScore": null,
+        "gstNumber": "22AAAAA0000A1Z5",
+        "docs": [
+          {
+            "docType": "AADHAAR",
+            "imageUrl": "ftp:ravi/aadhaar"
+          },
+          {
+            "docType": "PAN_CARD",
+            "imageUrl": "ftp:ravi/pan"
+          }
+        ]
+      }
+    },
+    {
+      "id": "617d8da0-dfc9-444d-9c16-5605f034825f",
+      "name": "SHEETGRAH",
+      "location": {
+        "street": "KOSMA ROAD, GHIROR",
+        "city": "MAINPURI, UP"
+      },
+      "owner": {
+        "id": "fff6501a-c57c-4e31-a08d-e7e35df986f6",
+        "name": "Ravi",
+        "credibilityScore": null,
+        "gstNumber": "22AAAAA0000A1Z5",
+        "docs": [
+          {
+            "docType": "AADHAAR",
+            "imageUrl": "ftp:ravi/aadhaar"
+          },
+          {
+            "docType": "PAN_CARD",
+            "imageUrl": "ftp:ravi/pan"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8afad234-8d71-4f71-a653-8ba27411880d",
+      "name": "CropFreeze",
+      "location": {
+        "street": "Aashiana",
+        "city": "Lucknow, UP"
+      },
+      "owner": {
+        "id": "16b1085b-0e08-4654-9f73-ffde302e978a",
+        "name": "Manas",
+        "credibilityScore": null,
+        "gstNumber": "33AAAAA0000A1Z5",
+        "docs": [
+          {
+            "docType": "AADHAAR",
+            "imageUrl": "ftp:manas/aadhaar"
+          },
+          {
+            "docType": "PAN_CARD",
+            "imageUrl": "ftp:manas/pan"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a65ab65d-374f-436e-8228-6cb05fc1bc2d",
+      "name": "ColdIce",
+      "location": {
+        "street": "Meja",
+        "city": "Manda, UP"
+      },
+      "owner": {
+        "id": "fff6501a-c57c-4e31-a08d-e7e35df986f6",
+        "name": "Ravi",
+        "credibilityScore": null,
+        "gstNumber": "22AAAAA0000A1Z5",
+        "docs": [
+          {
+            "docType": "AADHAAR",
+            "imageUrl": "ftp:ravi/aadhaar"
+          },
+          {
+            "docType": "PAN_CARD",
+            "imageUrl": "ftp:ravi/pan"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ee2ff06a-ed38-43bd-81b5-6320a58b434e",
+      "name": "Prabhat",
+      "location": {
+        "street": "Karchhana",
+        "city": "Kaundhiyara, UP"
+      },
+      "owner": {
+        "id": "fff6501a-c57c-4e31-a08d-e7e35df986f6",
+        "name": "Ravi",
+        "credibilityScore": null,
+        "gstNumber": "22AAAAA0000A1Z5",
+        "docs": [
+          {
+            "docType": "AADHAAR",
+            "imageUrl": "ftp:ravi/aadhaar"
+          },
+          {
+            "docType": "PAN_CARD",
+            "imageUrl": "ftp:ravi/pan"
+          }
+        ]
+      }
+    }
+  ],
+
+  "reasonsForLoan": ["Pre Harvest", "Post Harvest"],
+  "installments": ["3 Months", "6 Months", "9 Months", "1 Year"],
+  "banks": [
+    {
+      "bankId": "5e2d967d-9706-4ff3-871b-9e65937023ed",
+      "ifscCode": "UTIB0000363",
+      "image": "https://pbs.twimg.com/profile_images/1105444963142098945/el9N1DVr_400x400.png",
+      "name": "AXIS",
+      "interestRate": "3.5%",
+      "location": {
+        "street": "Ground Floor , No. 174, Mla Layout R. T. Nagar Main Road",
+        "city": "RT Nagar, Bangalore"
+      }
+    },
+    {
+      "bankId": "9abf6490-6df7-4075-88c9-6e3c6dde1514",
+      "ifscCode": "HDFC004052",
+      "image": "https://image3.mouthshut.com/images/imagesp/925004501s.png",
+      "name": "HDFC",
+      "interestRate": "3.0%",
+      "location": {
+        "street": "3rd Floor, Esteem Mall",
+        "city": "Hebbal, Bangalore"
+      }
+    },
+    {
+      "bankId": "a31e51e7-34eb-4708-a91c-447f439b0143",
+      "ifscCode": "ICIC0003180",
+      "name": "ICICI",
+      "image": "https://image3.mouthshut.com/images/imagesp/925004492s.jpg",
+      "interestRate": "3.5%",
+      "location": {
+        "street": "NO.504,32/3,KEMPAPURA MAIN ROAD",
+        "city": "Hebba, Bangalore"
+      }
+    },
+    {
+      "bankId": "b8519e03-16a1-46c8-850a-468086453ce8",
+      "ifscCode": "SBIN0007982",
+      "image": "https://mk0bfsieletsonlt96u6.kinstacdn.com/wp-content/uploads/2016/02/337111-sbi.gif",
+      "name": "SBI",
+      "interestRate": "4.0%",
+      "location": {
+        "street": "Opp Postoffie, Mainroad",
+        "city": "RT Nagar, Bangalore"
+      }
+    }
+  ],
+  "approval_list": [
+    {
+      "id": "1",
+      "name": "Sattpal",
+      "image": "https://media.gettyimages.com/photos/indian-farmer-holding-freshly-picked-capsicums-picture-id538620640?s=2048x2048",
+      "date": "23/04/2020",
+      "warehouse": "Prabhat",
+      "rate": "3%",
+      "location": "Hapur, UP West",
+      "loan_type": "101",
+      "application_type": "Post Harvent",
+      "packets": "10000",
+      "crop_quality": "Medium",
+      "phone": "787372762",
+      "email": "farmer1@gmail.com",
+      "status": "new",
+      "credit_score": "435",
+      "documents": [
+        "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+        "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Rajdheer",
+      "image": "https://media.gettyimages.com/photos/portrait-of-buffalo-shepherd-picture-id652550482?s=2048x2048",
+      "date": "22/04/2020",
+      "warehouse": "Prabhat",
+      "rate": "3%",
+      "location": "Hapur, UP West",
+      "loan_type": "101",
+      "application_type": "Post Harvent",
+      "packets": "10000",
+      "crop_quality": "Medium",
+      "phone": "787372762",
+      "email": "farmer2@gmail.com",
+      "status": "failed",
+      "credit_score": "420",
+      "documents": [
+        "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+        "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Sattpal",
+      "image": "https://media.gettyimages.com/photos/indian-farmer-holding-hoe-on-his-shoulder-picture-id504307354?s=2048x2048",
+      "date": "23/04/2020",
+      "warehouse": "Prabhat",
+      "rate": "3%",
+      "location": "Hapur, UP West",
+      "loan_type": "101",
+      "application_type": "Post Harvent",
+      "packets": "10000",
+      "crop_quality": "Medium",
+      "phone": "787372762",
+      "email": "farmer1@gmail.com",
+      "status": "approved",
+      "credit_score": "435",
+      "documents": [
+        "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+        "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Rajdheer",
+      "image": "https://media.gettyimages.com/photos/elderly-farmer-man-lost-in-thought-picture-id547133808?s=2048x2048",
+      "date": "22/04/2020",
+      "warehouse": "Prabhat",
+      "rate": "3%",
+      "location": "Hapur, UP West",
+      "loan_type": "101",
+      "application_type": "Post Harvent",
+      "packets": "10000",
+      "crop_quality": "Medium",
+      "phone": "787372762",
+      "email": "farmer2@gmail.com",
+      "status": "new",
+      "credit_score": "420",
+      "documents": [
+        "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+        "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Sattpal",
+      "image": "https://media.gettyimages.com/photos/farmer-and-wheat-picture-id524706148?s=2048x2048",
+      "date": "23/04/2020",
+      "warehouse": "Prabhat",
+      "rate": "3%",
+      "location": "Hapur, UP West",
+      "loan_type": "101",
+      "application_type": "Post Harvent",
+      "packets": "10000",
+      "crop_quality": "Medium",
+      "phone": "787372762",
+      "email": "farmer1@gmail.com",
+      "status": "new",
+      "credit_score": "435",
+      "documents": [
+        "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+        "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Rajdheer",
+      "image": "https://media.gettyimages.com/photos/happy-indian-farmer-standing-in-a-field-picture-id601789350?s=2048x2048",
+      "date": "22/04/2020",
+      "warehouse": "Prabhat",
+      "rate": "3%",
+      "location": "Hapur, UP West",
+      "loan_type": "101",
+      "application_type": "Post Harvent",
+      "packets": "10000",
+      "crop_quality": "Medium",
+      "phone": "787372762",
+      "email": "farmer2@gmail.com",
+      "status": "new",
+      "credit_score": "420",
+      "documents": [
+        "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+        "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Sattpal",
+      "image": "https://media.gettyimages.com/photos/elderly-farmer-man-lost-in-thought-picture-id922593872?s=2048x2048",
+      "date": "23/04/2020",
+      "warehouse": "Prabhat",
+      "rate": "3%",
+      "location": "Hapur, UP West",
+      "loan_type": "101",
+      "application_type": "Post Harvent",
+      "packets": "10000",
+      "crop_quality": "Medium",
+      "phone": "787372762",
+      "email": "farmer1@gmail.com",
+      "status": "new",
+      "credit_score": "435",
+      "documents": [
+        "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+        "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Rajdheer",
+      "image": "https://media.gettyimages.com/photos/cheerful-farmer-standing-portrait-in-the-field-picture-id507513162?s=2048x2048",
+      "date": "22/04/2020",
+      "warehouse": "Prabhat",
+      "rate": "3%",
+      "location": "Hapur, UP West",
+      "loan_type": "101",
+      "application_type": "Post Harvent",
+      "packets": "10000",
+      "crop_quality": "Medium",
+      "phone": "787372762",
+      "email": "farmer2@gmail.com",
+      "status": "new",
+      "credit_score": "420",
+      "documents": [
+        "https://image.flaticon.com/icons/svg/1086/1086563.svg",
+        "https://image.flaticon.com/icons/svg/1086/1086452.svg"
+      ]
+    }
+  ]
+}

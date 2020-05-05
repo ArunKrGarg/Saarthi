@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <g id="completed" transform="translate(-309 -166)">
+    <g id="Group_1125" data-name="Group 1125" transform="translate(64 -347)">
+      <path id="Path_1437" data-name="Path 1437" d="M13,0A13,13,0,1,1,0,13,13,13,0,0,1,13,0Z" transform="translate(245 513)" fill="#20cd98"/>
+    </g>
+    <path id="tick-sign" d="M10.166,33.286l-6,6L1.834,36.953,0,38.787l4.166,4.166L12,35.12Z" transform="translate(316 140.714)" fill="#fff"/>
+  </g>
+</svg>
